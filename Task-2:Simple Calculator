@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Declare variables for two numbers and the chosen operation
+    double num1, num2;
+    char op;
+    double result;
+
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter an operation (+, -, *, /): ";
+    cin >> op;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            cout << "Result: " << result << endl;
+            break;
+
+        case '-':
+            result = num1 - num2;
+            cout << "Result: " << result << endl;
+            break;
+
+        case '*':
+            result = num1 * num2;
+            cout << "Result: " << result << endl;
+            break;
+
+        case '/':
+            // Check for division by zero
+            if (num2 != 0) {
+                result = num1 / num2;
+                cout << "Result: " << result << endl;
+            } else {
+                cout << "Error: Division by zero is not allowed." << endl;
+            }
+            break;
+
+        default:
+            // If the user enters an invalid operator
+            cout << "Invalid operation. Please use +, -, *, or /." << endl;
+    }
+
+    return 0;
+}
